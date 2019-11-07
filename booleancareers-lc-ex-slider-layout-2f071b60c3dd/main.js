@@ -20,34 +20,54 @@ $( document ).ready(function() {
 function nextSlide (){
 
   var posizioneimg = $(".slider-wrapper .images img.active");
+  // PALLINI
+  var posizioneNav = $(".nav i.active");
 
   posizioneimg.removeClass("active");
+  // PALLINI
+  posizioneNav.removeClass("active");
 
   // Se siamo all ultima IMG dello SLIDER, ritorna ad essere attiva la prima
 
   if (posizioneimg.hasClass("last")) {
-    $(".slider-wrapper .images img.first").addClass("active")
-  } else {
+    $(".slider-wrapper .images img.first").addClass("active");
+    // PALLINI
+    $(".nav i.first").addClass("active");
 
+  } else {
     // Altrimenti passa l active alla prossima
     posizioneimg.next("img").addClass("active");
+    posizioneNav.next("i").addClass("active");
   }
 }
-// IDEA:
+// FRECCIA SX:
 
 function previousSlide (){
 
   var posizioneimg = $(".slider-wrapper .images img.active");
+  // PALLINI
+  var posizioneNav = $(".nav i.active");
+
 
   posizioneimg.removeClass("active");
+  // PALLINI
+  posizioneNav.removeClass("active");
+
 
   // Se siamo alla prima IMG dello SLIDER, ritorna ad essere attiva l ultima
 
   if (posizioneimg.hasClass("first")) {
     $(".slider-wrapper .images img.last").addClass("active")
+    // PALLINI
+    $(".nav i.last").addClass("active");
+
   } else {
 
     // Altrimenti passa l active alla precedente
     posizioneimg.prev("img").addClass("active");
+    // PALLINI
+    posizioneNav.prev("i").addClass("active");
+
+
   }
 }
